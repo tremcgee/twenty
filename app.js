@@ -15,7 +15,7 @@ do{
     alert(`The computer has reached ${cscore} the computer will not draw anymore`)
     if(cscore > 20){
         uscore2 = uscore2 + 1
-        alert(`The computer has gone over 20 with ${cscore} you will not draw`)
+        alert(`The computer has gone over 20 with ${cscore} you will not draw and gain a point`)
     }else{
         do {
             var nump = Math.floor(Math.random() * 10) + 1
@@ -25,20 +25,22 @@ do{
             play = prompt("Do you want to draw again? y/n")
         }while((play == "y") && (uscore < 20))
         alert(`You have reached ${uscore}`)
+        if(uscore > 20){
+            alert(`You have gone over 20 with ${uscore} the computer gains a point`)
+            cscore2 = cscore2 + 1
+        }else if (uscore > cscore){
+            alert(`You won with a ${uscore}, congrats!`)
+            uscore2 = uscore2 + 1
+        }else if (uscore < cscore){
+            alert(`The computer won with a ${cscore}, loser.`)
+            cscore2 = cscore2 + 1
+        }else{
+            alert("The scores were tied; no points given")
+        }
     }
-    if(uscore > 20){
-        alert(`You have gone over 20 with ${uscore} computer`)
-        cscore2 = cscore2 + 1
-    }else if (uscore > cscore){
-        uscore2 = uscore2 + 1
-    }else if (uscore < cscore){
-        cscore2 = cscore2 + 1
-    }else{
-        alert("The scores were tied; no points given")
-    }
-    alert(`This round scores are
-    YOU:${uscore2} COM:${cscore2}`)
-    play2 = prompt("Do you want to play another game")
+     alert(`This round scores are
+        YOU:${uscore2} COM:${cscore2}`)
+        play2 = prompt("Do you want to play another game")
 }while(play2 == "y")
 alert(`The final scores are
     YOU:${uscore2} COM:${cscore2}`)
