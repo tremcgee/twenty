@@ -44,3 +44,4 @@ do{
 }while(play2 == "y")
 alert(`The final scores are
     YOU:${uscore2} COM:${cscore2}`)
+// green blackjack
